@@ -5,6 +5,7 @@
 <style lang="scss">
 * {
   box-sizing: border-box;
+  font-family: "Signika Negative", sans-serif;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -23,7 +24,7 @@ body {
   padding: 0;
 }
 #nav {
-  padding: 30px;
+  padding: 2%;
   display: flex;
   justify-content: center;
   a {
@@ -32,5 +33,11 @@ body {
     list-style: none;
     text-decoration: none;
   }
+}
+a {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+  font-size: 2em;
 }
 </style>

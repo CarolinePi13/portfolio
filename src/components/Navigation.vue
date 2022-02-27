@@ -31,6 +31,7 @@ export default {
   border-radius: 25px;
   padding: 6px 15px;
   margin: 4px;
+  font-size: 1em;
   @media (min-width: 799px) {
     font-size: 1.5em;
   }

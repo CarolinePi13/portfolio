@@ -3,7 +3,7 @@
     <img
       class="profil-pic"
       alt="Photo of dev"
-      src="../assets/IMG_4504-removebg-preview.png"
+      src="../assets/img_4504-removebg-preview-2.png"
     />
     <h1>CAROLINE</h1>
     <h2>Web developer</h2>

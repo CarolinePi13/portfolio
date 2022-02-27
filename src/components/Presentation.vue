@@ -1,19 +1,17 @@
 <template>
-  <div>
-    <div class="img-pres">
+  <div class="presentation">
+    <div class="pres-img">
       <img
         class="profil-pic"
         alt="Photo of dev"
-        src="../assets/IMG_4504-removebg-preview.png"
+        src="../assets/img_4504-removebg-preview-2.png"
       />
-      <h1>Hi! I am <span>Caroline.</span></h1>
+      <p>
+        Hi! I am <strong>Caroline.</strong>I'm a web Developper.<br />
+        <strong>What defines me:</strong> Extroverted, enthousiastic, I am a
+        perfectionnist, who loves neat and well crafted work.
+      </p>
     </div>
-
-    <h2>I'm a web Developper</h2>
-    <p>
-      <strong>What defines me:</strong> Extroverted, enthousiastic, I am a
-      perfectionnist, who loves neat and well crafted work.
-    </p>
   </div>
 </template>
 
@@ -27,12 +25,46 @@ export default {
 </script>
 
 <style lang="scss">
+.presentation {
+  font-size: 1.1em;
+  p {
+    margin-top: 0;
+    padding: 0 5px 5px 5px;
+  }
+  strong {
+    font-family: "Coiny", cursive;
+    // font-family: "Bangers", cursive;
+  }
+
+  // font-family: "Pacifico", cursive;
+
+  @media (min-width: 1200px) {
+    display: flex;
+  }
+}
+
 .profil-pic {
   object-fit: cover;
-  width: 50%;
+
+  width: 120px;
+  max-width: 300px;
   height: auto;
+  @media (min-width: 500px) {
+    width: 150px;
+  }
+  @media (min-width: 799px) {
+    width: 150px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 200px;
+  }
 }
-.img-pres {
+.pres-img {
   display: flex;
+  flex-direction: column;
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
 }
 </style>
