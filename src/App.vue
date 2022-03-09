@@ -38,6 +38,8 @@ a {
   list-style: none;
   text-decoration: none;
   color: black;
-  font-size: 2em;
+}
+li {
+  list-style: none;
 }
 </style>

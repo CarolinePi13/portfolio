@@ -7,7 +7,7 @@
         src="../assets/img_4504-removebg-preview-2.png"
       />
       <p>
-        Hi! I am <strong>Caroline.</strong>I'm a web Developper.<br />
+        Hi! I am <strong>Caroline.</strong>I'm a web Developper.
         <strong>What defines me:</strong> Extroverted, enthousiastic, I am a
         perfectionnist, who loves neat and well crafted work.
       </p>
@@ -30,6 +30,12 @@ export default {
   p {
     margin-top: 0;
     padding: 0 5px 5px 5px;
+    width: 90%;
+    margin: auto;
+
+    @media (min-width: 1200px) {
+      font-size: 1.6em;
+    }
   }
   strong {
     font-family: "Coiny", cursive;
@@ -63,6 +69,7 @@ export default {
 .pres-img {
   display: flex;
   flex-direction: column;
+
   @media (min-width: 1200px) {
     flex-direction: row;
   }

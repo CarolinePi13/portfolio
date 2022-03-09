@@ -20,7 +20,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .gray {
   background-color: #ece8e8;
   width: fit-content;
