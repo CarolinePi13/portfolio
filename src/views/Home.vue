@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <navigation />
     <div class="grid-inside">
       <div class="container">
         <div class="pres radius shadow">
@@ -17,28 +16,26 @@
           </router-link>
         </div>
         <div class="plan radius shadow">
-          <skills
-            class="hard-skill"
-            v-for="skill in skills"
-            :key="skill"
-            :skill="skill"
+          <img
+            class="plan_top-image"
+            src="../assets/830x532_region-auvergne-rhone-alpes.webp"
+            alt=""
+          />
+          <img
+            class="plan_bottom-image"
+            src="../assets/auvergne-rhone-alpes.jpeg"
+            alt=""
           />
         </div>
-        <div class="projet2 radius shadow">
-          <router-link class="router-link" to="/projet2">this way!</router-link>
+        <router-link class="router-link projet2 radius shadow" to="/projet2">
           <img src="../assets/phonedroit.png" alt="" />
-        </div>
-        <div class="more-about-me radius shadow inside-grid">
-          <a
-            class="contact"
-            onClick="javascript:window.open('mailto:coraline.mo63@gmail.com', 'my-window');event.preventDefault()"
-            href="mailto:coraline.mo63@gmail.com"
-          >
-            Contact</a
-          >
-          <router-link class="router-link about" to="/about">
+        </router-link>
+        <div class="more-about-me radius shadow">
+          <div class="more-about-me__back-left"></div>
+          <router-link class="router-link about shadow" to="/about">
             More about me!</router-link
           >
+          <div class="more-about-me__bottom-right"></div>
         </div>
         <div class="twitter radius shadow">
           <a href="https://twitter.com/CaroPi13" target="_blank"
@@ -68,16 +65,11 @@
 </template>
 
 <script>
-import skills from "../components/Skills.vue";
-
-import navigation from "../components/Navigation.vue";
 import presentation from "../components/Presentation.vue";
 
 export default {
   name: "Home",
   components: {
-    skills,
-    navigation,
     presentation,
   },
   data() {
@@ -87,20 +79,61 @@ export default {
       englishSoftSkills: ["dynamic", "organized", "pro-active", "attentive"],
       frenchSoftSkills: ["dynamique", "organisée", "pro-active", "À l'écoute"],
       expanded: false,
+      hover: false,
     };
   },
-  methods: {},
+  methods: {
+    toggleHover() {
+      this.hover = !this.hover;
+    },
+  },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../assets/animations";
 
 .pres {
   grid-area: pres;
   background-color: #7fa492;
+  @media (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+  }
 }
 
+.about {
+  padding: 25px;
+  background-color: #7fa492;
+  width: fit-content;
+  color: #2c3e50;
+  border-radius: 20px;
+  position: relative;
+
+  z-index: 3;
+  overflow: hidden;
+  &hover {
+    color: white;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(165, 214, 190, 0.5);
+    left: -100%;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+    transition: all 0.7s;
+  }
+}
+
+.about {
+  &:hover::before {
+    left: 0px;
+    top: 0px;
+  }
+}
 .projet1 {
   grid-area: projet1;
   background-color: #3f6357;
@@ -116,8 +149,8 @@ export default {
     position: relative;
     -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
+    -webkit-transition: transform 0.4s cubic-bezier(0.65, -0.02, 0.65, 0.64);
+    transition: transform 0.4s cubic-bezier(0.65, -0.02, 0.65, 0.64);
     &:hover {
       -webkit-transform: scale(1.3);
       transform: scale(1.3);
@@ -127,11 +160,44 @@ export default {
 .plan {
   background-color: white;
   grid-area: plan;
+  overflow: hidden;
+  position: relative;
+
+  .plan_top-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: opacity 0.5s cubic-bezier(0.65, -0.02, 0.65, 0.64);
+    transition: opacity 0.5s cubic-bezier(0.65, -0.02, 0.65, 0.64);
+    &:hover {
+      opacity: 0;
+      z-index: 3;
+    }
+  }
+  .plan_bottom-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 .projet2 {
   grid-area: projet2;
-  background-color: white;
+  background-color: #31434e;
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
@@ -142,7 +208,7 @@ export default {
     width: 100%;
     height: 80%;
     transform: rotate(-35deg);
-    transition: transform 300ms 100ms;
+    transition: transform 300ms 100ms cubic-bezier(0.65, -0.02, 0.65, 0.64);
   }
   &:hover > img {
     transform: rotate(0deg);
@@ -151,9 +217,32 @@ export default {
 
 .more-about-me {
   grid-area: more-about-me;
-  background-color: #31434e;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
+.more-about-me__back-left {
+  position: absolute;
+  background: #31434e;
+  top: 0px;
+  left: 0px;
+  width: 250px;
+  height: 120px;
+  border-radius: 40px 0 100% 0/ 30% 50% 50% 50%;
+}
+.more-about-me__bottom-right {
+  position: absolute;
+  background: #7fa492;
+  bottom: 0px;
+  right: 0px;
+  width: 150px;
+  height: 250px;
+  border-radius: 50% 50% 50% 50%/ 80% 20% 50% 50%;
+}
 .twitter {
   grid-area: twitter;
   background-color: white;
@@ -218,11 +307,11 @@ export default {
     grid-template-areas:
       "pres projet1 "
       "more-about-me projet1 "
-      " more-about-me twitter"
-      "plan . "
+      " plan twitter"
+      " projet3 projet3  "
       "projet2 linkedin"
-      "projet2 projet3"
-      " . projet3";
+      "projet2 .";
+
     padding: 35px;
   }
   @media (min-width: 1200px) {
@@ -231,25 +320,16 @@ export default {
     grid-template-areas:
       "pres pres pres"
       "more-about-me more-about-me projet1 "
-      "plan . projet1"
-      "plan twitter  ."
-      "projet2 . linkedin"
-      "projet2 .. "
-      "projet3 projet3 . ";
+      "plan twitter projet1"
+      "plan projet2 linkedin"
+      " projet3 projet2 . "
+      ". . . "
+      " . . . ";
   }
 }
 .p1 {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.radius {
-  border-radius: 40px;
-}
-.shadow {
-  box-shadow: #c0cac5 2px 2px 10px 2px;
-  &:hover {
-    box-shadow: #838a86 3px 3px 3px 2px;
-  }
 }
 </style>

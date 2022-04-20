@@ -1,10 +1,19 @@
 <template>
+  <navigation />
   <router-view />
 </template>
+<script>
+import navigation from "./components/Navigation.vue";
 
+export default {
+  components: {
+    navigation,
+  },
+};
+</script>
 <style lang="scss">
 * {
-  box-sizing: border-box;
+  box-sizing: content-box;
   font-family: "Signika Negative", sans-serif;
 }
 #app {
@@ -41,5 +50,11 @@ a {
 }
 li {
   list-style: none;
+}
+.radius {
+  border-radius: 40px;
+}
+.shadow {
+  box-shadow: #c0cac5 2px 2px 10px 2px;
 }
 </style>
