@@ -7,10 +7,15 @@
         src="../assets/img_4504-removebg-preview-2.png"
       />
     </div>
-    <p>
+    <p v-if="english">
       Hi! I'm <strong>Caroline. </strong>I'm a web Developper.
       <strong>What defines me:</strong> Extroverted, enthousiastic, a
       perfectionnist, who loves neat and well crafted work!
+    </p>
+    <p >
+      Bonjour! Je suis <strong>Caroline. </strong>Je design et developpe des sites internet, que ce soit des sites vitrine ou des sites e-commerce.
+
+      
     </p>
     <div class="contact-me">
       <a
@@ -28,14 +33,23 @@
 export default {
   name: "Presentation",
   data() {
-    return {};
+    return {
+      english: false,
+    };
   },
 };
 </script>
 
 <style lang="scss">
 .presentation {
-  font-size: 1em;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9em;
+  @media (min-width: 1200px){
+    flex-direction: row;
+  }
   p {
     padding: 0 5px 5px 5px;
     width: 90%;
@@ -68,8 +82,8 @@ export default {
 
 .profil-pic {
   object-fit: cover;
-  width: 120px;
-  max-width: 300px;
+  width: 110px;
+  max-width: 280px;
   height: auto;
   @media (min-width: 500px) {
     width: 150px;
@@ -105,13 +119,14 @@ export default {
   color: #2c3e50;
   padding: 3%;
   background-color: #eceef0;
-  padding: 25px;
+  padding: 10%;
   width: 50%;
   margin-top: 4%;
   border-radius: 20px;
   position: relative;
   z-index: 0;
   overflow: hidden;
+  
   @media (min-width: 1200px) {
     margin-top: 0;
     padding: 25px;

@@ -2,13 +2,11 @@
   <div>
     <nav id="nav">
       <ul class="gray">
-        <router-link class="router-link" to="/">Home</router-link>
+        <router-link class="router-link" to="/">Accueil</router-link>
 
-        <router-link class="router-link" to="/about">About</router-link>
+        <router-link class="router-link" to="/about">Qui suis-je?</router-link>
 
-        <router-link class="router-link" to="/">English</router-link>
-
-        <router-link class="router-link" to="/french">French</router-link>
+        <router-link class="router-link" to="/projects">Portfolio</router-link>
       </ul>
     </nav>
   </div>

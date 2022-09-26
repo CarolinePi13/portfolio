@@ -217,12 +217,13 @@ export default {
 
 .more-about-me {
   grid-area: more-about-me;
-  background-color: white;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
 .more-about-me__back-left {
@@ -230,8 +231,9 @@ export default {
   background: #31434e;
   top: 0px;
   left: 0px;
-  width: 250px;
-  height: 120px;
+  overflow: hidden;
+  width: 100%;
+  height:45%;
   border-radius: 40px 0 100% 0/ 30% 50% 50% 50%;
 }
 .more-about-me__bottom-right {
@@ -239,8 +241,8 @@ export default {
   background: #7fa492;
   bottom: 0px;
   right: 0px;
-  width: 150px;
-  height: 250px;
+  width: 40%;
+  height: 90%;
   border-radius: 50% 50% 50% 50%/ 80% 20% 50% 50%;
 }
 .twitter {

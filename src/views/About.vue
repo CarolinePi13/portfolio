@@ -10,14 +10,16 @@
           <p class="bio">
             Hi! I a web Developer from the center of France. I learned coding
             online, then went trough a official diploma. I used to work as
-            manager's assistant.<br /><br />My purpose is to help small
-            buisnesses have nice and efficient websites, that have good SEO and
-            accessibility. I love making other's lives easier. <br /><br />
+            manager's assistant.<br /><br />My purpose is to help small and
+            bigger buisnesses and people to have nice and efficient websites,
+            that have good SEO and accessibility. I love making other's lives
+            easier so I prioritize total responsiveness and user experience.
+            <br /><br />
 
             I have always been interested in creating, love a good british
             humour and am outgoing and speak with confidence. <br /><br />
             I am autonomous and like learning by myself. I love challenges and
-            will work hard ot push projects trough no matter what. Hit
+            will work hard to push projects trough no matter what. Hit
             <strong>contact</strong> if you want to work with me!
           </p>
           <div class="contact-me-position">
@@ -52,10 +54,7 @@
             </ul>
           </div>
         </div>
-        <div class="softwares-tools">
-          <h3>The tools I like to work with:</h3>
-          <p>VS Code, GitHub</p>
-        </div>
+
         <div class="langages">
           <h3>The languages I speak:</h3>
           <ul>
@@ -71,14 +70,14 @@
 
       <section class="corps">
         <div class="training">
-          <h3>What training do I have?</h3>
+          <h3>My professionnal training</h3>
           <span class="date">2021-2022</span>
           <p>
             Web Developer at <a href="openclassromms.com">OpenClassRooms</a>
           </p>
         </div>
         <div class="abilities"></div>
-        <div class="passions">
+        <div class="passions radius">
           <h3>What do I love doing aside from coding?</h3>
           <ul>
             <li>
@@ -114,6 +113,8 @@ export default {
         "Bootstrap",
         "Node.Js",
         "MongoDb",
+        "VS Code",
+        "GitHub",
       ],
       futureSkills: ["Python", "Django", "React.Js", "Java", "PhP"],
       englishSoftSkills: ["dynamic", "organized", "pro-active", "attentive"],
@@ -133,6 +134,9 @@ main {
 }
 
 .passions {
+  background-color: white;
+  padding: 30px;
+  margin-top: 30px;
   ul {
     display: flex;
     padding-inline-start: 0px;
@@ -141,7 +145,7 @@ main {
       width: 33%;
     }
     img {
-      width: 100px;
+      width: 150px;
     }
   }
 }
@@ -182,16 +186,25 @@ h4 {
 }
 .langages-frameworks {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   column-gap: 30px;
+  row-gap: 30px;
   margin-top: 30px;
+  @media (min-width: 799px) {
+    flex-direction: row;
+  }
 }
 .mytools,
 .working-on {
   background-color: white;
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  @media (min-width: 799px) {
+    width: 50%;
+  }
+
   ul {
     padding-inline-start: 0px;
   }

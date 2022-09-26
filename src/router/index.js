@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import French from '../components/FrenchPresentation.vue'
 import project1 from "../components/Project1.vue";
 import project2 from "../components/Project2.vue";
+import projects from "../components/Projects.vue"
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: '/projet2',
     name: 'projet2',
     component: project2
+  },
+  {
+    path: '/projets',
+    name: 'projets',
+    component: projects
   },
  
 ]

@@ -4,7 +4,7 @@
     <h2 class="subtitle">E-shop using bootstrap</h2>
     <p class="spec">
       Build an e-shop front-end app, responsive designed. The design was free.
-      The backend was provided. NO FRAMEWORK allowed.
+      The backend was provided. Strict vanilla JS, no JS framework allowed.
     </p>
     <img src="" alt="" />
   </div>
